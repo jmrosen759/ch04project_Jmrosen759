@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+
+  display: grid;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+  gap: 12px;
+}
+
+header { grid-area: header; padding: 12px; }
+nav    { grid-area: nav;    padding: 12px; }
+main   { grid-area: main;   padding: 12px; }
+footer { grid-area: footer; padding: 12px; }
+
+header h1 {
+  margin: 0;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+nav li a {
+  text-decoration: none;
+  padding: 8px 12px;
+  display: inline-block;
+}
+
+nav li a:hover {
+  text-decoration: underline;
+}
+
+#image-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+#image-flex figure {
+  margin: 0;
+  width: 220px; /* gives you a consistent card width */
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media screen and (max-width: 480px) {
+  nav ul {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  nav li a {
+    width: 100%;
+  }
+
+  header, nav, main, footer {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 1.4rem;
+  }
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  body {
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "footer";
+  }
+
+  #image-flex figure {
+    width: 240px;
+  }
+}
+
+/* step 12: large screens */
+@media screen and (min-width: 769px) {
+  body {
+    grid-template-areas:
+      "header header"
+      "nav    main"
+      "footer footer";
+    grid-template-columns: 220px 1fr;
+    align-items: start;
+  }
+
+  nav ul {
+    flex-direction: column; /* side nav on large screens (optional but looks good) */
+    align-items: stretch;
+  }
+}

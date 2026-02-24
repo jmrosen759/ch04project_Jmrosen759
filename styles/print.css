@@ -1,0 +1,26 @@
+nav {
+  display: none;
+}
+
+img {
+  display: none;
+}
+
+/* keep print simple */
+body {
+  margin: 0;
+  font-family: serif;
+}
+
+header, main, footer, section {
+  display: block;
+}
+
+section {
+  break-inside: avoid;
+  margin-bottom: 12px;
+}
+
+footer {
+  margin-top: 16px;
+}
